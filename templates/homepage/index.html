@@ -1,0 +1,407 @@
+﻿
+{% extends "basic.html" %}
+{% load static %}
+
+ 
+	{% block head %}
+
+
+{% endblock %}
+
+
+
+
+{% block body %}
+
+
+    <br>
+<div class="jumbotron">
+    <h1 class="display-4"><b>Be your own doctor...</h1>
+    <p class="lead">
+      InstaMedi is a sophisticated web application designed to deliver rapid medical guidance to users. Leveraging advanced data mining techniques, users input symptoms which undergo meticulous analysis against an extensive medical database. This process accurately predicts potential illnesses, enabling users to make informed decisions and promptly seek medical care. InstaMedi serves as a vital bridge between technology and healthcare, ensuring swift access to crucial information and facilitating efficient consultation with healthcare professionals. Its seamless integration of intelligent algorithms and a user-friendly interface enhances support for individuals in managing their health proactively. InstaMedi represents a transformative solution in healthcare, offering streamlined, accessible, and effective support tailored to the needs of modern users, thereby empowering individuals to take control of their well-being with confidence.
+     
+  
+     {% if user.is_authenticated %}
+
+     
+     {% else %}
+
+      <p class="lead">
+      <button type="button" class="btn btn-primary btn-lg"  data-toggle="modal" data-target=".bd-example-modal-lg">Get started</button>
+      </p>
+    
+
+  </div>
+
+
+
+    {% endif %}
+
+
+
+  <!-- Large modal -->
+
+  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+   
+  <center>
+  <h1>Sign-In  As</h1>
+  </center>
+  <br><br>
+
+  <center>
+  <form>
+      <div class="container mt-5 mb-5">
+  <div class="row">
+      <div class="col">
+        <a href="{% url 'sign_in_admin' %}">
+  <img  alt="admin" src="{% static 'homepage/admin.png' %}"  class="img">
+  </a>
+      </div>
+
+      <div class="col">
+  <a href="{% url 'sign_in_doctor' %}">
+  <img  alt="doctor" src="{% static 'homepage/doctor.png' %}"  class="img">
+  </a>
+      </div>
+
+      <div class="col">
+  <a href="{% url 'sign_in_patient' %}">
+  <img  alt="patient" src="{% static 'homepage/patient.png' %}"  class="img">
+  </a>
+      </div>
+    </div>
+    </div>
+  </form>
+  </center>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <!-- Large modal -->
+
+  <div class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+    
+  <center>
+    <h1>Sign-Up  As</h1>
+    </center>
+  <center>
+  <form>
+      <div class="container mt-5 mb-5 ml-5 mr-5">
+  <div class="row">
+
+      <div class="col">
+  <a href="{% url 'signup_doctor' %}">
+  <img  alt="doctor" src="{% static 'homepage/doctor.png' %}"  class="img">
+  </a>
+      </div>
+
+      <div class="col">
+  <a href="{% url 'signup_patient' %}">
+  <img  alt="patient" src="{% static 'homepage/patient.png' %}"  class="img">
+  </a>
+      </div>
+    </div>
+    </div>
+  </form>
+  </center>
+
+      </div>
+    </div>
+  </div>
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.core.min.css">
+
+
+  <div id="OurDoctors">
+    <div class="homepage-section-wrapper desktop-wrapper horizontal-scroll">
+      <center><h2 class="homepage-section-heading horizontal-scroll">Our Doctors</h2></center>
+      <div class="glide slider our-doctor-slider glide--ltr glide--slider glide--swipeable">
+        <div class="glide__track" data-glide-el="track">
+          
+          <ul class="glide__slides" style="transition: transform 0ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s; width: 1454px; transform: translate3d(0px, 0px, 0px);">
+            <div class="card">
+                            <li class="glide__slide" style="width: 253.75px; margin-left: 16px; margin-right: 16px;"><div class="horizontal-list-card"><section class="doctor-card doctor-card--small"><div class="doctor-card__left"><figure class="doctor-card__profile-picture"><img src="https://www.practostatic.com/images1-fabric/doctor/647391/dr-kamal-kishore-verma-5d69f93f40699.jpg" height="54px" width="54px" alt="Dr. Kamal Kishore Verma"></figure></div><div class="doctor-card__content ellipsis"><h4 class="doctor-card__name ellipsis">Dr. K.K Verma</h4><p class="ellipsis">Sexologist, Psychiatrist</p><p>15<!-- --> year<!-- -->s<!-- --> <!-- -->experience</p></div></section></div></li>
+                          </div>
+            <div class="card">
+            <li class="glide__slide" style="width: 223.75px; margin-right: 16px; margin-left: 16px;"><div class="horizontal-list-card"><section class="doctor-card doctor-card--small"><div class="doctor-card__left"><figure class="doctor-card__profile-picture"><img src="https://www.practostatic.com/images1-fabric/doctor/953743/dr-murali-reddy-61079374694e8.jpg" height="54px" width="54px" alt="Dr. Murali Reddy" ></figure></div><div class="doctor-card__content ellipsis"><h4 class="doctor-card__name ellipsis">Dr. Murali Reddy</h4><p class="ellipsis">Dermatologist</p><p>7<!-- --> year<!-- -->s<!-- --> <!-- -->experience</p></div></section></div></li></div>
+                  <div class="card">
+            <li class="glide__slide" style="width: 253.75px; margin-left: 16px; margin-right: 16px;"><div class="horizontal-list-card"><section class="doctor-card doctor-card--small"><div class="doctor-card__left"><figure class="doctor-card__profile-picture"><img src="https://www.practostatic.com/images1-fabric/doctor/589655/dr-hitesh-viradiya-610d46ab0cf9b.jpg" height="54px" width="54px" alt="Dr Hitesh Viradiya"></figure></div><div class="doctor-card__content ellipsis"><h4 class="doctor-card__name ellipsis">Dr. Hitesh Viradiya</h4><p class="ellipsis">Dermatologist, Cosmetologist, Hair Transplant Surgeon</p><p>8<!-- --> year<!-- -->s<!-- --> <!-- -->experience</p></div></section></div></li>
+                  </div>
+                  <div class="card">
+                    <li class="glide__slide" style="width: 253.75px; margin-left: 16px; margin-right: 16px;"><div class="horizontal-list-card"><section class="doctor-card doctor-card--small"><div class="doctor-card__left"><figure class="doctor-card__profile-picture"><img src="https://www.practostatic.com/images1-fabric/doctor/1059525/dr-tejashree-m-64704616d88ee.jpeg" height="54px" width="54px" alt="Dr. Tejashree M"></figure></div><div class="doctor-card__content ellipsis"><h4 class="doctor-card__name ellipsis">Dr. Tejashree M</h4><p class="ellipsis">Obstetrician, Gynecologist</p><p>9<!-- --> year<!-- -->s<!-- --> <!-- -->experience</p></div></section></div></li>
+                  </div>
+                          <div class="card">
+                            <li class="glide__slide" style="width: 253.75px; margin-left: 16px; margin-right: 16px;"><div class="horizontal-list-card"><section class="doctor-card doctor-card--small"><div class="doctor-card__left"><figure class="doctor-card__profile-picture"><img src="https://www.practostatic.com/images1-fabric/doctor/881196/dr-raut-supriya-devidas-64ea4d2db30e2.jpg" height="54px" width="54px" alt="Dr. Raut Supriya Devidas"></figure></div><div class="doctor-card__content ellipsis"><h4 class="doctor-card__name ellipsis">Dr. R.S Devidas</h4><p class="ellipsis">Dermatologist</p><p>5<!-- --> year<!-- -->s<!-- --> <!-- -->experience</p></div></section></div></li>
+                          </div>
+                          
+                          <div class="card">
+                            <li class="glide__slide" style="width: 253.75px; margin-left: 16px; margin-right: 16px;"><div class="horizontal-list-card"><section class="doctor-card doctor-card--small"><div class="doctor-card__left"><figure class="doctor-card__profile-picture"><img src="https://www.practostatic.com/images1-fabric/doctor/1047997/dr-shubham-jhanwar-6404519036847.jpg" height="54px" width="54px" alt="Dr. Shubham Jhanwar"></figure></div><div class="doctor-card__content ellipsis"><h4 class="doctor-card__name ellipsis">Dr. Shubham Jhanwar</h4><p class="ellipsis">Psychiatrist, Sexologist</p><p>4<!-- --> year<!-- -->s<!-- --> <!-- -->experience</p></div></section></div></li>
+                          </div>
+                          <div class="card">
+                            <li class="glide__slide" style="width: 253.75px; margin-left: 16px; margin-right: 16px;"><div class="horizontal-list-card"><section class="doctor-card doctor-card--small"><div class="doctor-card__left"><figure class="doctor-card__profile-picture"><img src="https://www.practostatic.com/images1-fabric/doctor/898304/dr-pushpa-gour-61bc4208bc823.png" height="54px" width="54px" alt="Dr. Pushpa Gour"></figure></div><div class="doctor-card__content ellipsis"><h4 class="doctor-card__name ellipsis">Dr. Pushpa Gour</h4><p class="ellipsis">Gynecologist</p><p>29<!-- --> year<!-- -->s<!-- --> <!-- -->experience</p></div></section></div></li>
+                          </div>
+                          <div class="card">
+                            <li class="glide__slide" style="width: 253.75px; margin-left: 16px;"><div class="horizontal-list-card"><section class="doctor-card doctor-card--small"><div class="doctor-card__left"><figure class="doctor-card__profile-picture"><img src="https://www.practostatic.com/images1-fabric/doctor/883447/dr-rayees-ahmad-wani-5f5af3659d316.jpg" height="54px" width="54px" alt="Dr. Rayees Ahmad Wani"></figure></div><div class="doctor-card__content ellipsis"><h4 class="doctor-card__name ellipsis">Dr. R.A Wani</h4><p class="ellipsis">Neuropsychiatrist, Addiction Psychiatrist, Sexologist</p><p>13<!-- --> year<!-- -->s<!-- --> <!-- -->experience</p></div></section></div></li>
+                          </div>
+                          </ul>
+                        </div>
+                        <div class="slider-controls" data-glide-el="controls">
+
+                        </i>
+                      </i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+                  </div>
+                </div>
+              </div>
+              
+              
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/glide.min.js"></script>
+              <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                  new Glide(".our-doctor-slider", {
+                    type: "carousel",
+                    perView: 4,
+                    breakpoints: {
+                      800: {
+                        perView: 2
+                      },
+                      480: {
+                        perView: 1
+                      }
+                    }
+                  }).mount();
+                });
+              </script>
+
+
+
+              <style>
+                .elementor-tab-title {
+                  border-bottom: 1px solid #d5d8dc; /* Add a border bottom to each question */
+              }
+          
+              .elementor-tab-content {
+                  display: none;
+              }
+            </style>
+            
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    var toggleTitles = document.querySelectorAll('.elementor-toggle .elementor-tab-title');
+            
+                    toggleTitles.forEach(function (title) {
+                        var content = title.nextElementSibling;
+                        content.style.display = 'none';
+                        title.setAttribute('aria-expanded', 'false');
+            
+                        // Find the icon element within the title
+                        var iconClosed = title.querySelector('.elementor-toggle-icon-closed');
+                        var iconOpened = title.querySelector('.elementor-toggle-icon-opened');
+            
+                        title.addEventListener('click', function () {
+                            if (content.style.display === 'block') {
+                                content.style.display = 'none';
+                                this.setAttribute('aria-expanded', 'false');
+                                iconClosed.style.display = 'inline-block'; // Show closed icon
+                                iconOpened.style.display = 'none'; // Hide opened icon
+                            } else {
+                                content.style.display = 'block';
+                                this.setAttribute('aria-expanded', 'true');
+                                iconClosed.style.display = 'none'; // Hide closed icon
+                                iconOpened.style.display = 'inline-block'; // Show opened icon
+                            }
+                        });
+                    });
+                });
+            </script>
+            
+            
+
+
+            <section class="elementor-section elementor-top-section elementor-element elementor-element-16ea7843 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="16ea7843" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+              <div class="elementor-background-overlay"></div>
+              <div class="elementor-container elementor-column-gap-default">
+                  <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-4df654b7" data-id="4df654b7" data-element_type="column">
+                      <div class="elementor-widget-wrap elementor-element-populated">
+                          <div class="elementor-element elementor-element-412fa3f4 elementor-widget elementor-widget-heading" data-id="412fa3f4" data-element_type="widget" data-widget_type="heading.default">
+                              <div class="elementor-widget-container">
+                                  <center><h2 class="elementor-heading-title elementor-size-default">Frequently Asked Questions</h2></center>
+                              </div>
+                          </div>
+                          <div class="elementor-element elementor-element-1734846a elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="1734846a" data-element_type="widget" data-widget_type="divider.default">
+                              <div class="elementor-widget-container">
+                                  <div class="elementor-divider">
+                                      <span class="elementor-divider-separator"></span>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="elementor-element elementor-element-59146941 elementor-widget elementor-widget-toggle" data-id="59146941" data-element_type="widget" data-widget_type="toggle.default">
+                              <div class="elementor-widget-container">
+                                  <div class="elementor-toggle">
+                                      <div class="questions-container" style="text-align: center;"> <!-- Center align container -->
+                                          <!-- Q.1 -->
+                                          
+
+                                          <div class="elementor-toggle-item">
+                                            <div class="panel panel-default">
+                                            <div id="elementor-tab-title-1491" class="elementor-tab-title elementor-active" data-tab="1" role="button" aria-controls="elementor-tab-content-1491" aria-expanded="true" tabindex="0" aria-selected="true">
+                                                          
+                                                          <a class="elementor-toggle-title" tabindex="0">Q.1) Are the physicians licensed and qualified?</a>
+                                            </div>
+                                          
+                                            <div id="elementor-tab-content-1491" class="elementor-tab-content elementor-clearfix elementor-active" data-tab="1" role="region" aria-labelledby="elementor-tab-title-1491" style="display: block;"><p><span style="font-weight: 400;">Yes, absolutely. Our physicians are fully licensed and highly qualified. They have completed the necessary education and training to meet all professional standards. Rest assured, you’re in capable hands with our team. If you have any specific concerns or questions about our physicians’ qualifications, feel free to reach out, and we’ll be happy to provide more information to ensure your peace of mind</span></p></div>
+                                          </div>
+                                        </div>
+                                                <div class="elementor-toggle-item">
+                                            <div id="elementor-tab-title-1492" class="elementor-tab-title elementor-active" data-tab="2" role="button" aria-controls="elementor-tab-content-1492" aria-expanded="true" tabindex="0" aria-selected="true">
+                                                          
+                                                          <a class="elementor-toggle-title" tabindex="0">Q.2) What types of medical issues can be addressed through this service?</a>
+                                            </div>
+                                          
+                                            <div id="elementor-tab-content-1492" class="elementor-tab-content elementor-clearfix elementor-active" data-tab="2" role="region" aria-labelledby="elementor-tab-title-1492" style="display: block;"><p><span style="font-weight: 400;">Our service covers a range of medical issues, focusing on neurology, nephrology, gastroenterology, cardiology, urology, and gynecology. We aim to provide comprehensive care across these specialties, ensuring your health needs are met with expertise and compassion.</span></p></div>
+                                          </div>
+                                                <div class="elementor-toggle-item">
+                                            <div id="elementor-tab-title-1493" class="elementor-tab-title elementor-active" data-tab="3" role="button" aria-controls="elementor-tab-content-1493" aria-expanded="true" tabindex="0" aria-selected="true">
+                                                          
+                                                          <a class="elementor-toggle-title" tabindex="0">Q.3) How many doctors are connected with your platform?</a>
+                                            </div>
+                                          
+                                            <div id="elementor-tab-content-1493" class="elementor-tab-content elementor-clearfix elementor-active" data-tab="3" role="region" aria-labelledby="elementor-tab-title-1493" style="display: block;"><p><span style="font-weight: 400;">Currently, we have over 40 doctors connected with our platform. These dedicated professionals are here to provide you with the best possible healthcare services. Our team of doctors covers various specialties, ensuring that you receive expert care tailored to your specific needs. </span></p></div>
+                                          </div>
+                                                <div class="elementor-toggle-item">
+                                            <div id="elementor-tab-title-1494" class="elementor-tab-title elementor-active" data-tab="4" role="button" aria-controls="elementor-tab-content-1494" aria-expanded="true" tabindex="0" aria-selected="true">
+                                                          
+                                                          <a class="elementor-toggle-title" tabindex="0">Q.4) Is my medical information kept confidential?</a>
+                                            </div>
+                                          
+                                            <div id="elementor-tab-content-1494" class="elementor-tab-content elementor-clearfix elementor-active" data-tab="4" role="region" aria-labelledby="elementor-tab-title-1494" style="display: block;"><p><span style="font-weight: 400;">Absolutely. We take your medical information very seriously, and confidentiality is our top priority. Your personal health details are strictly protected and only accessible to authorized personnel directly involved in your care. We adhere to strict privacy policies and follow all legal requirements to ensure the utmost security and confidentiality of your medical records.</span></p></div>
+                                          </div>
+                                                <div class="elementor-toggle-item">
+                                            <div id="elementor-tab-title-1495" class="elementor-tab-title elementor-active" data-tab="5" role="button" aria-controls="elementor-tab-content-1495" aria-expanded="true" tabindex="0" aria-selected="true">
+                                                          
+                                                          <a class="elementor-toggle-title" tabindex="0">Q.5) What languages do the physicians speak?</a>
+                                            </div>
+                                            <div id="elementor-tab-content-1495" class="elementor-tab-content elementor-clearfix elementor-active" data-tab="5" role="region" aria-labelledby="elementor-tab-title-1495" style="display: block;"><p><span style="font-weight: 400;">The physicians at our facility are proficient in Hindi and English. This means they can communicate effectively with patients in both languages. This ensures that language is not a barrier, and our patients can comfortably discuss their health concerns with our doctors. If you have any specific language preferences, feel free to let us know, and we will do our best to accommodate your needs.</span></p></div>
+                                          <!-- Q.2, Q.3, Q.4, Q.5... -->
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="elementor-element elementor-element-aa83d33 elementor-align-center elementor-mobile-align-center elementor-widget elementor-widget-button" data-id="aa83d33" data-element_type="widget" data-widget_type="button.default">
+                              <div class="elementor-widget-container">
+                                  <div class="elementor-button-wrapper">
+                                      <a class="elementor-button elementor-button-link elementor-size-sm" href="#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjU0IiwidG9nZ2xlIjpmYWxzZX0%3D">
+                                          <span class="elementor-button-content-wrapper">
+                                              <span class="elementor-button-icon elementor-align-icon-right"></span>
+                                          </span>
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </section>
+          
+          <br>
+
+
+
+
+
+
+              <div class="content-box">
+                <div id="SeoSection">
+        
+                  <div class="homepage-section-wrapper desktop-wrapper seo-section">
+                    <div class="card">
+                      <p><b>Looking for a trusted & secured online dr consultation in India? <br>
+                        Consult a doctor online on instamedi for any health concern. Our pool of over 20,000 trusted doctors across 25+ specialties will ensure all your health queries are answered. You can get online dr advice from a Psychiatrist, Dermatologist, Gynecologist, Sexologist, Pediatrician, Cardiologist, Neurologist, Gastroenterologist, Urologist, Endocrinologist, Dentist, Psychologist, and many more.<br>
+                        Instamedi serves customers in the following cities: Bangalore, Mumbai, Delhi, Lucknow, Kolkata, Hyderabad, Chennai, Pune, Ahmedabad, Gurgaon and Ghaziabad.
+                      </p>
+                    
+                      <p>Topics: <a href="/consult/diet-plan-to-increase-weight/t">Looking for weight gain tips?</a><span> | </span><a href="/consult/chest-pain/t">Worried about chest pain?</a><span> | </span><a href="/consult/dark-circles/t">Want to get rid of dark circles?</a><span> | </span><a href="/consult/how-to-use-prega-news-kit/t">How to use prega news kit?</a><span> | </span><a href="/consult/weight-loss/t">Need some weight loss advice?</a><span> | </span><a href="/consult/depression/t">Work, family or relationship stress?</a><span> | </span><a href="/consult/constipation/t">Looking to improve digestion?</a><span> | </span><a href="/consult/kidney-stone/t">Painful kidney stones?</a><span> | </span><a href="/consult/how-to-control-quick-sperm-release/t">Need some sexual advice?</a><span> | </span><a href="/consult/premature-ejaculation/t">Want to learn how to last longer?</a><span> | </span><a href="/consult/lower-back-pain/t">Seek help for lower back pain</a><span> | </span><a href="/consult/irregular-periods/t">Need some advice for irregular periods?</a><span> | </span><a href="/consult/throat-pain/t">Ask how you can relieve throat pain</a><span> | </span><a href="/consult/frequent-urination/t">Need help with frequent urination?</a><span> | </span><a href="/consult/breathing-problem/t">Have trouble breathing?</a><span> | </span><a href="/consult/tooth-pain/t">Need some dental advice?</a><span> | </span><a href="/consult/acne-scars/t">Want to get rid of acne scars?</a><span> | </span><a href="/consult/abdomen-pain/t">Stomach pain bothering you?</a><span> | </span><a href="/consult/how-much-delay-in-periods-is-normal/t">Doubts about periods?</a></p>
+                    
+                      <p>Specialties: <a href="/consult/ask-a-psychiatrist-online">Ask A Psychiatrist</a><span> | </span><a href="/consult/ask-a-dermatologist-online">Ask A Dermatologist</a><span> | </span><a href="/consult/ask-a-sexologist-online">Ask A Sexologist</a><span> | </span><a href="/consult/ask-a-gynecologist-online">Ask A Gynecologist</a><span> | </span><a href="/consult/ask-a-general-physician-doctor-online">Ask A General Physician Doctor</a><span> | </span><a href="/consult/ask-a-pediatrician-doctor-online">Ask A Pediatrician Doctor</a><span> | </span><a href="/consult/ask-an-ear-nose-throat-doctor-online">Ask An Ear Nose Throat Doctor</a><span> | </span><a href="/consult/ask-a-kidney-urine-doctor-online">Ask A Kidney Urine Doctor</a><span> | </span><a href="/consult/ask-an-orthopedic-doctor-online">Ask An Orthopedic Doctor</a><span> | </span><a href="/consult/ask-a-neurologist-doctor-online">Ask A Neurologist Doctor</a></p>
+                    
+                  </div>
+                  <br>
+                </div>
+              
+  <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                  var contactLink = document.getElementById('contact-link');
+                  var footer = document.getElementById('footer');
+              
+                  if (contactLink && footer) {
+                      contactLink.addEventListener('click', function(event) {
+                          event.preventDefault();
+                          footer.scrollIntoView({ behavior: 'smooth' });
+                      });
+                  }
+              });
+
+            </script>
+              
+              <div id="footer" class="card bg-dark text-white">
+                  <div class="card-body">
+                      Contact Us-
+                      <ul>
+                          <li>
+                              <h5 class="mb-1">Email: instamedi@gmail.com</h5>
+                          </li>
+                          <li>
+                              <h5 class="mb-1">Contact no. 9897667854</h5>
+                          </li>
+                          <li>
+                              <h5 class="mb-1">Address: Vinay Khand, Gomti Nagar,Lucknow</h5>
+                              <div class="footer-copyright text-center">Copyright © {% now 'Y' %}, <a href="instamedi.com"> instamedi</a> All rights reserved.
+                              </div>
+                          </li>
+                      </ul>
+                  </div>
+</div>
+            
+              
+          
+
+  
+ 
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+    
+
+
+
+
+    
+  {% endblock %}
+
+
+
+
+
+
