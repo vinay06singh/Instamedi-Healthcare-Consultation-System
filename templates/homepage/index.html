@@ -1,89 +1,26 @@
-﻿
-{% extends "basic.html" %}
+﻿{% extends "basic.html" %}
 {% load static %}
-
  
-	{% block head %}
-
+{% block head %}
 
 {% endblock %}
 
-
-
-
 {% block body %}
 
-
-    <br>
 <div class="jumbotron">
-    <h1 class="display-4"><b>Be your own doctor...</h1>
-    <p class="lead">
-      InstaMedi is a sophisticated web application designed to deliver rapid medical guidance to users. Leveraging advanced data mining techniques, users input symptoms which undergo meticulous analysis against an extensive medical database. This process accurately predicts potential illnesses, enabling users to make informed decisions and promptly seek medical care. InstaMedi serves as a vital bridge between technology and healthcare, ensuring swift access to crucial information and facilitating efficient consultation with healthcare professionals. Its seamless integration of intelligent algorithms and a user-friendly interface enhances support for individuals in managing their health proactively. InstaMedi represents a transformative solution in healthcare, offering streamlined, accessible, and effective support tailored to the needs of modern users, thereby empowering individuals to take control of their well-being with confidence.
-     
-  
-     {% if user.is_authenticated %}
 
-     
-     {% else %}
+          <h1 class="display-4"><b>Become Your Own Health Expert</b></h1>
+          <p class="lead">
+              InstaMedi is a sophisticated web application designed to deliver rapid medical guidance to users. Leveraging advanced data mining techniques, users input symptoms which undergo meticulous analysis against an extensive medical database. This process accurately predicts potential illnesses, enabling users to make informed decisions and promptly seek medical care. InstaMedi serves as a vital bridge between technology and healthcare, ensuring swift access to crucial information and facilitating efficient consultation with healthcare professionals. Its seamless integration of intelligent algorithms and a user-friendly interface enhances support for individuals in managing their health proactively. InstaMedi represents a transformative solution in healthcare, offering streamlined, accessible, and effective support tailored to the needs of modern users, thereby empowering individuals to take control of their well-being with confidence.
+          </p>
+          {% if user.is_authenticated %}
+          {% else %}
+          <p class="lead">
+              <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".bd-example-modal-lg">Get started</button>
+          </p>
+          {% endif %}
 
-      <p class="lead">
-      <button type="button" class="btn btn-primary btn-lg"  data-toggle="modal" data-target=".bd-example-modal-lg">Get started</button>
-      </p>
-    
-
-  </div>
-
-
-
-    {% endif %}
-
-
-
-  <!-- Large modal -->
-
-  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-   
-  <center>
-  <h1>Sign-In  As</h1>
-  </center>
-  <br><br>
-
-  <center>
-  <form>
-      <div class="container mt-5 mb-5">
-  <div class="row">
-      <div class="col">
-        <a href="{% url 'sign_in_admin' %}">
-  <img  alt="admin" src="{% static 'homepage/admin.png' %}"  class="img">
-  </a>
-      </div>
-
-      <div class="col">
-  <a href="{% url 'sign_in_doctor' %}">
-  <img  alt="doctor" src="{% static 'homepage/doctor.png' %}"  class="img">
-  </a>
-      </div>
-
-      <div class="col">
-  <a href="{% url 'sign_in_patient' %}">
-  <img  alt="patient" src="{% static 'homepage/patient.png' %}"  class="img">
-  </a>
-      </div>
-    </div>
-    </div>
-  </form>
-  </center>
-
-      </div>
-    </div>
-  </div>
-
-
-
-
-
+        </div>
 
 
   <!-- Large modal -->
@@ -91,21 +28,23 @@
   <div class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
-    
+     
   <center>
     <h1>Sign-Up  As</h1>
     </center>
+  <br><br>
+  
   <center>
   <form>
       <div class="container mt-5 mb-5 ml-5 mr-5">
-  <div class="row">
-
+   <div class="row">
+  
       <div class="col">
   <a href="{% url 'signup_doctor' %}">
   <img  alt="doctor" src="{% static 'homepage/doctor.png' %}"  class="img">
   </a>
       </div>
-
+  
       <div class="col">
   <a href="{% url 'signup_patient' %}">
   <img  alt="patient" src="{% static 'homepage/patient.png' %}"  class="img">
@@ -115,19 +54,20 @@
     </div>
   </form>
   </center>
-
+  
       </div>
     </div>
   </div>
+  
 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.core.min.css">
 
-
+  <div class="jumbotron">
   <div id="OurDoctors">
     <div class="homepage-section-wrapper desktop-wrapper horizontal-scroll">
-      <center><h2 class="homepage-section-heading horizontal-scroll">Our Doctors</h2></center>
+      <center><h1><span class="badge text-bg-primary">Our Doctor</span></h1></center>
       <div class="glide slider our-doctor-slider glide--ltr glide--slider glide--swipeable">
         <div class="glide__track" data-glide-el="track">
           
@@ -157,6 +97,7 @@
                             <li class="glide__slide" style="width: 253.75px; margin-left: 16px;"><div class="horizontal-list-card"><section class="doctor-card doctor-card--small"><div class="doctor-card__left"><figure class="doctor-card__profile-picture"><img src="https://www.practostatic.com/images1-fabric/doctor/883447/dr-rayees-ahmad-wani-5f5af3659d316.jpg" height="54px" width="54px" alt="Dr. Rayees Ahmad Wani"></figure></div><div class="doctor-card__content ellipsis"><h4 class="doctor-card__name ellipsis">Dr. R.A Wani</h4><p class="ellipsis">Neuropsychiatrist, Addiction Psychiatrist, Sexologist</p><p>13<!-- --> year<!-- -->s<!-- --> <!-- -->experience</p></div></section></div></li>
                           </div>
                           </ul>
+                          
                         </div>
                         <div class="slider-controls" data-glide-el="controls">
 
@@ -170,7 +111,7 @@
                   </div>
                 </div>
               </div>
-              
+            </div>
               
               <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/glide.min.js"></script>
               <script>
@@ -189,8 +130,6 @@
                   }).mount();
                 });
               </script>
-
-
 
               <style>
                 .elementor-tab-title {
@@ -232,17 +171,16 @@
                 });
             </script>
             
-            
-
-
             <section class="elementor-section elementor-top-section elementor-element elementor-element-16ea7843 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="16ea7843" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
               <div class="elementor-background-overlay"></div>
+              <div class="jumbotron">
               <div class="elementor-container elementor-column-gap-default">
                   <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-4df654b7" data-id="4df654b7" data-element_type="column">
                       <div class="elementor-widget-wrap elementor-element-populated">
                           <div class="elementor-element elementor-element-412fa3f4 elementor-widget elementor-widget-heading" data-id="412fa3f4" data-element_type="widget" data-widget_type="heading.default">
+                            
                               <div class="elementor-widget-container">
-                                  <center><h2 class="elementor-heading-title elementor-size-default">Frequently Asked Questions</h2></center>
+                                  <center><h1><span class="badge text-bg-primary">Frequently Asked Question</span></h1></center>
                               </div>
                           </div>
                           <div class="elementor-element elementor-element-1734846a elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="1734846a" data-element_type="widget" data-widget_type="divider.default">
@@ -318,21 +256,17 @@
                       </div>
                   </div>
               </div>
+            </div>
           </section>
           
-          <br>
-
-
-
-
-
-
+         
               <div class="content-box">
                 <div id="SeoSection">
-        
+                  <div class="jumbotron">
                   <div class="homepage-section-wrapper desktop-wrapper seo-section">
                     <div class="card">
-                      <p><b>Looking for a trusted & secured online dr consultation in India? <br>
+                      <center><h1><span class="badge text-bg-primary">About Us</span></h1></center>
+                      <p><b>Looking for a trusted & secured online doctor consultation in India? <br>
                         Consult a doctor online on instamedi for any health concern. Our pool of over 20,000 trusted doctors across 25+ specialties will ensure all your health queries are answered. You can get online dr advice from a Psychiatrist, Dermatologist, Gynecologist, Sexologist, Pediatrician, Cardiologist, Neurologist, Gastroenterologist, Urologist, Endocrinologist, Dentist, Psychologist, and many more.<br>
                         Instamedi serves customers in the following cities: Bangalore, Mumbai, Delhi, Lucknow, Kolkata, Hyderabad, Chennai, Pune, Ahmedabad, Gurgaon and Ghaziabad.
                       </p>
@@ -342,9 +276,8 @@
                       <p>Specialties: <a href="/consult/ask-a-psychiatrist-online">Ask A Psychiatrist</a><span> | </span><a href="/consult/ask-a-dermatologist-online">Ask A Dermatologist</a><span> | </span><a href="/consult/ask-a-sexologist-online">Ask A Sexologist</a><span> | </span><a href="/consult/ask-a-gynecologist-online">Ask A Gynecologist</a><span> | </span><a href="/consult/ask-a-general-physician-doctor-online">Ask A General Physician Doctor</a><span> | </span><a href="/consult/ask-a-pediatrician-doctor-online">Ask A Pediatrician Doctor</a><span> | </span><a href="/consult/ask-an-ear-nose-throat-doctor-online">Ask An Ear Nose Throat Doctor</a><span> | </span><a href="/consult/ask-a-kidney-urine-doctor-online">Ask A Kidney Urine Doctor</a><span> | </span><a href="/consult/ask-an-orthopedic-doctor-online">Ask An Orthopedic Doctor</a><span> | </span><a href="/consult/ask-a-neurologist-doctor-online">Ask A Neurologist Doctor</a></p>
                     
                   </div>
-                  <br>
                 </div>
-              
+              </div>
   <script>
                 document.addEventListener("DOMContentLoaded", function() {
                   var contactLink = document.getElementById('contact-link');
@@ -359,13 +292,37 @@
               });
 
             </script>
+
+            <div class="content-box">
+              <div id="SeoSection">
+                <div class="jumbotron">
+                <div class="homepage-section-wrapper desktop-wrapper seo-section">
+                  <div class="card">
+                    <center><h1><span class="badge text-bg-primary">Terms & Conditions</span></h1></center>
+                    <p><b><ul>
+                      <li>By submitting the form above, you are allowing Healthians Health Advisors to call you back at your convenient time.<br>
+                      <li>Our Health advisor and Medical team will be involved to guide you in the complete cycle of the testing process and will facilitate the diagnosis process for prevention of any disease.<br>
+                        <li>Your health vitals and history will be taken for pre-diagnosis and for suggesting the relevant tests through Health Karma or you can also share your prescription with our medical team.<br>
+                          <li>Once you confirm your booking, a trained Phlebotomists (Sample Collector) will be assigned to visit you on your chosen time and pickup address and for collection of sample. Phlebotomist may also take other vitals if suggested in the pre diagnosis.<br>
+                            <li>Your sample will then be transported to the nearest collection hub maintaining the integrity of the sample and will be centrifuged before sending to the lab for processing.<br>
+                              <li>Once the results are processed in the Healthians / Partner Lab, medical team at Healthians will verify the results and a smart report including historical trends and vitals information submitted by you along with simple interpretations will be shared with you.<br>
+                                <li>You will also be offered a post report counselling by our Counsellor as a part of the healthcare service offered to you.<br>
+                                  <li>Healthians offers 24*7 customer support to resolve any of your concern during and after the entire diagnosis process.<br>
+                                    <li>Dear Customer, we are pleased on your signup with Healthians today. By entering your phone number you agree that we may send you text notifications, text marketing offers and health checkup reminders. By signing up you provide your consent to receive communication from Healthians.</p>
+                  <ul>
+                  
+                  
+                </div>
+              
+              </div>
+            </div>
               
               <div id="footer" class="card bg-dark text-white">
                   <div class="card-body">
                       Contact Us-
                       <ul>
                           <li>
-                              <h5 class="mb-1">Email: instamedi@gmail.com</h5>
+                              <h5 class="mb-1">Email: care@instamedi.co.in</h5>
                           </li>
                           <li>
                               <h5 class="mb-1">Contact no. 9897667854</h5>
@@ -392,11 +349,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   
-    
-
-
-
-
     
   {% endblock %}
 

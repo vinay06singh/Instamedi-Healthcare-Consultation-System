@@ -7,7 +7,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 
     <script
@@ -38,32 +37,25 @@
     background-position: 100% 100%;
     background-repeat:   no-repeat;
     background-size:     cover;
-
 }
 
 
+body {
+  background-image: url( "{% static 'homepage/background.jpg' %}");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.93;
+}
+
 
 </style>
 
-<style>
-  body {
-    background-image: url( "{% static 'homepage/images.jpeg' %}");
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 1;
-  }
-  </style>
 
-<style>
-  .content-box {
-    padding: 20px;
-    border-radius: 10px;
-  }
-</style>
 
 
     {% block head %}
+
 
 
     {% endblock %}
@@ -76,15 +68,16 @@
   <body>
 
 
+
       <div class="container-fluid">
 
           <div class="page-header mt-1 mb-1 ml-1 ">
-            <img src="{% static 'homepage/logo.jpg' %}"> 
+          <h1>InstaMedi</h1>   
           <h6>Be your own doctor </h6>
         </div>
       
       
-          <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #3b435b;">
+          <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1b405a;">
               <a class="navbar-brand" href="{% url 'home' %}">InstaMedi </a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
           <span class="navbar-toggler-icon"></span>
@@ -98,8 +91,8 @@
                           <a class="nav-link" href="{% url 'home' %}">About</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#" id="contact-link">Contact</a>
-                    </li>
+                          <a class="nav-link" href="{% url 'home' %}">Contact</a>
+                      </li>
                       
       
       
@@ -244,3 +237,5 @@
 
 </body>
 </html>
+
+
